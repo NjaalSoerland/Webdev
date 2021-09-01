@@ -20,20 +20,20 @@ function mouseLocation(event) {
         clear();
     }
 
-    let currentX = parseInt(event.clientX-250);
-    let currentY = parseInt(event.clientY-250);
+    let currentX = parseInt(event.clientX);
+    let currentY = parseInt(event.clientY);
 
     XPos.pop();
-    XPos.unshift(currentX);
+    XPos.unshift(currentX-250);
 
     YPos.pop();
-    YPos.unshift(currentY);
+    YPos.unshift(currentY-250);
 
     for (let i = 21; i > 0; i--) {
         let part = new Image();
         part.src = "../o1/media/images/moray/moray" + i.toString() + ".svg";
         part.onload = function () {
-            ctx.drawImage(part, XPos[i] - $('#canvasPainting').offset().left + 50, (YPos[i] - $('#canvasPainting').offset().top) / 6
+            ctx.drawImage(part, XPos[i] - $('#canvasPainting').offset().left, (YPos[i] - $('#canvasPainting').offset().top) / 6
                 , 250, 100);
         };
     }
