@@ -13,15 +13,15 @@ for (let n = 1; n < length+1; n++){
 
 let counter = 0;
 
-function mouseLocation(event) {
+function mouseLocation(e) {
     counter++;
     if (counter == 10){
         counter = 0;
         clear();
     }
 
-    let currentX = parseInt(event.clientX);
-    let currentY = parseInt(event.clientY);
+    let currentX = parseInt(e.clientX);
+    let currentY = parseInt(e.clientY);
 
     XPos.pop();
     XPos.unshift(currentX);

@@ -13,7 +13,7 @@ svg {
     display: inline-flex;
     width: 90%;
     box-shadow: 0 0 5px grey;
-    margin-top: 50px;
+    margin: 20px 0 50px 0;
     padding: 10px;
     justify-content: center;
     min-height: 330px;
@@ -22,6 +22,8 @@ svg {
 #description {
     width: 50%;
     margin-top: -20px;
+    padding: 5px;
+    box-shadow: 0 10px 5px grey;
 }
 
 #profile {
@@ -67,6 +69,11 @@ svg {
     z-index: 2;
     background-color: white;
     text-align: center;
+}
+
+#music {
+    width: 90%;
+    display: inline-block;
 }
 
 #navbar {
