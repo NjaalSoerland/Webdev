@@ -9,6 +9,36 @@ svg {
     height: 500px;
 }
 
+#artist {
+    display: inline-flex;
+    width: 90%;
+    box-shadow: 0 0 5px grey;
+    margin-top: 50px;
+    padding: 10px;
+    justify-content: center;
+    min-height: 330px;
+}
+
+#description {
+    width: 50%;
+    margin-top: -20px;
+}
+
+#profile {
+    width:40%;
+    height: 300px;
+    margin-right: 20px;
+    background-image: url("../media/images/panini.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#profile p {
+    position: relative;
+    margin-top: 305px;
+    color: #6f6f6f;
+}
+
 #svgPainting, #canvasPainting {
     width: 20vw;
     height: 100vh;
@@ -49,6 +79,10 @@ svg {
     box-shadow: 0 0 10px grey;
 }
 
+#svgPainting {
+    left:0;
+}
+
 .navOption {
     height: 100%;
     display: flex;
@@ -62,7 +96,21 @@ svg {
     cursor: pointer;
 }
 
-#svgPainting {
-    left:0;
-}
 
+@media only screen and (max-width: 880px) {
+    #artist {
+        flex-wrap: wrap;
+    }
+
+    #profile, #description {
+        width: 90%;
+    }
+
+    #profile {
+        margin: 0 0 50px 0;
+    }
+
+    #navbar {
+        font-size: 2vw;
+    }
+}
