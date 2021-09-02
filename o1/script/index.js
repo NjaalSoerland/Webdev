@@ -1,7 +1,8 @@
 const XPos = [];
 const YPos = [];
 const svgElements = [];
-const canvas = document.getElementById('canvasPainting');
+const can = $('#canvasPainting');
+const canvas = can[0]
 const ctx = canvas.getContext('2d');
 
 let length = 27;
@@ -29,7 +30,6 @@ function mouseLocation(e) {
     YPos.pop();
     YPos.unshift(currentY);
 
-    let can = $('#canvasPainting')
     for (let i = 21; i > 0; i--) {
         let part = new Image();
         part.src = "../o1/media/images/moray/moray" + i.toString() + ".svg";
@@ -39,9 +39,7 @@ function mouseLocation(e) {
     }
 
     for (let index = 0; index < length; index++) {
-        document.getElementById(svgElements[index]).style.top = (YPos[index]-250).toString();
-        document.getElementById(svgElements[index]).style.left = (XPos[index]-250).toString();
-
+        $('#'+svgElements[index]).css({"top":(YPos[index]-250).toString(), "left": (XPos[index]-250).toString()});
     }
 
 }

@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: #87ac92;
+    text-align: center;
 }
 
 svg {
@@ -13,7 +14,7 @@ svg {
     display: inline-flex;
     width: 90%;
     box-shadow: 0 0 5px grey;
-    margin: 20px 0 50px 0;
+    margin: 20px 0 30px 0;
     padding: 10px;
     justify-content: center;
     min-height: 330px;
@@ -53,6 +54,7 @@ svg {
 
 #canvasPainting {
     right:0;
+    z-index: 0;
 }
 
 #logo {
@@ -65,7 +67,7 @@ svg {
     min-height: 100vh;
     box-shadow: 0 0 10px grey;
     position: relative;
-    margin-left: 20vw;
+    display:inline-block;
     z-index: 2;
     background-color: white;
     text-align: center;
@@ -103,6 +105,25 @@ svg {
     cursor: pointer;
 }
 
+.title {
+    width: 20vw;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    justify-content: center;
+    height:50px;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    z-index: 3;
+}
+
+canvas + .title{
+    right:0;
+    z-index: 1;
+}
+
 
 @media only screen and (max-width: 880px) {
     #artist {
@@ -119,5 +140,9 @@ svg {
 
     #navbar {
         font-size: 2vw;
+    }
+
+    .title {
+        font-size: 13px;
     }
 }
