@@ -24,23 +24,23 @@ function mouseLocation(event) {
     let currentY = parseInt(event.clientY);
 
     XPos.pop();
-    XPos.unshift(currentX-250);
+    XPos.unshift(currentX);
 
     YPos.pop();
-    YPos.unshift(currentY-250);
+    YPos.unshift(currentY);
 
+    let can = $('#canvasPainting')
     for (let i = 21; i > 0; i--) {
         let part = new Image();
         part.src = "../o1/media/images/moray/moray" + i.toString() + ".svg";
         part.onload = function () {
-            ctx.drawImage(part, XPos[i] - $('#canvasPainting').offset().left, (YPos[i] - $('#canvasPainting').offset().top) / 6
-                , 250, 100);
+            ctx.drawImage(part, XPos[i] - can.offset().left-can.width()/2, (YPos[i]/can.height())*150-50, 250, 100);
         };
     }
 
     for (let index = 0; index < length; index++) {
-        document.getElementById(svgElements[index]).style.top = YPos[index].toString();
-        document.getElementById(svgElements[index]).style.left = XPos[index].toString();
+        document.getElementById(svgElements[index]).style.top = (YPos[index]-250).toString();
+        document.getElementById(svgElements[index]).style.left = (XPos[index]-250).toString();
 
     }
 
