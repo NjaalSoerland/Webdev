@@ -47,3 +47,17 @@ function mouseLocation(e) {
 function clear(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+function showDocumentation() {
+    let doc = $('#documentation');
+    let button = $('#docHeader')[0];
+    if (doc.height() == 0) {
+        doc.css("height", "auto");
+        button.innerText = "Klikk her for å skjule dokumentasjon"
+    }
+    else {
+        doc.css("height", "0");
+        button.innerText = "Klikk her for å vise dokumentasjon"
+    }
+
+}
