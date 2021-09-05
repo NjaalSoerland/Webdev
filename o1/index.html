@@ -453,7 +453,8 @@
             Denne siden er et arkiv av den misfortåtte mannens kunstverk. I en tid hvor folk brukte kost og maling,
             lagde Panini livaktige murener i canvas og ren SVG. En mann før sin tid som døde så alt for ung. Bildene som
             ligger på
-            hver side av denne nettsiden er to versjoner av samme maleri, som helt enkelt heter "That's a Moray". Tro
+            hver side av denne nettsiden (de to grønne rektanglene) er to versjoner av samme maleri, som helt enkelt
+            heter "That's a Moray". Tro
             til
             murenenes natur ligger de helt i ro fram til noe passerer foran dem som de kan spise. Dieten til disse
             ekslusive
@@ -476,45 +477,76 @@
                 dokumentasjonen.
                 Dette er for å forenkle stylingen av siden, da det er lett å holde elementer på plass (mot midten av
                 siden med justify-content)
-                samtidig som det gjør det lett å lage designet responsivt (feks bruke 'flex-wrap: wrap' i artikkelen for å
-                ha bildet over teksten for mindre skjermer). <br><br>
+                samtidig som det gjør det lett å lage designet responsivt (feks bruke 'flex-wrap: wrap' for mindre
+                skjermstørrelser
+                for å ha bildet over teksten). <br><br>
                 Under artikkelen har jeg brukt en grid for å vise frem noen tilfeldige bilder, dette egentlig bare for
-                å vise hvordan grid funker. Valget av grid her var på grunn av responsivt design og for å gjøre det enkelt
+                å vise hvordan grid funker. Valget av grid her var på grunn av responsivt design og for å gjøre det
+                enkelt
                 å ha bilder av forskjellige størrelser sammen.
             </p>
         </div>
         <div>
             <h4>SVG og Canvas</h4>
             <p>
-                SVG-bildet består av 27 hardkodete SVG-elementer stablet oppå hverandre for å simulere dybde. Når man drar musen
-                over bildet blir museposisjen lagret i toppen av en liste på 27 koordinater, og hvert element får sin respektive posisjon
-                i rekkefølgen de ligger i for å få det til å se ut som ålen følger etter musa.<br><br>
-                Canvas bruker samme teknologi for posisjon av lagene (samme liste). Men bruker en loop over 21 bildefiler til å tegne bildene i
-                rekkefølge med drawImage. Funksjonen har også en counter som bruker clearRect på canvas ved gjevne intervaller (hvert
+                SVG-bildet består av 27 hardkodete SVG-elementer stablet oppå hverandre for å simulere dybde. Når man
+                drar musen
+                over bildet blir posisjonen til musa lagret i toppen av en liste på 27 koordinater, og hvert element får
+                sin respektive posisjon
+                i rekkefølgen de ligger i for å få det til å se ut som ålen følger etter musa. (SVG kan være litt buggy
+                når man endrer skjermstørrelse med minimer-knappen, men funker om man justerer litt på størrelsen ved å
+                dra i hjørnet. Hvis man ikke gjør dette blir den ikke oppdatert)<br><br>
+                Canvas bruker samme teknologi for posisjon av lagene (samme liste). Men bruker en loop over 21
+                bildefiler til å tegne bildene i
+                rekkefølge med drawImage. Funksjonen har også en counter som bruker clearRect på canvas ved gjevne
+                intervaller (hvert
                 tiende funksjonskall) for at ålen ikke skal legge igjen bilder når den beveger seg videre<br><br>
-                Det at ålen forsvinner fra det ene bildet når den beveger seg over til det andre er et bevist valg for å få det til
-                å virke mer flytende (at det ikke er en frossen ål på bildet som ikke er i bruk), derav bruker SVG og Canvas-bildet samme
+                Det at ålen forsvinner fra det ene bildet når den beveger seg over til det andre er et bevist valg for å
+                få det til
+                å virke mer flytende (at det ikke er en frossen ål på bildet som ikke er i bruk), derav bruker SVG og
+                Canvas-bildet samme
                 liste med musekoordinater.
             </p>
         </div>
         <div>
             <h4>jQuery</h4>
             <p>
-                jQuery har jeg brukt til å koble opp html elementer til js koden. Feks når en SVG skal flyttes på, kalles IDen gjennom jQuery
-                og css blir endret derifra.
+                jQuery har jeg brukt til å koble opp html elementer til js koden. Feks når en SVG skal flyttes på,
+                kalles ID-en gjennom jQuery,
+                og css for top og left blir endret derifra. Knappen for å åpne og lukke dokumentasjon bruker også jQuery
+                i form av en click() funksjon
+                som aktiveres når man trykker på teksten. Jeg valgte å ikke bruke jQuery mouseover for bildene fordi
+                funksjonen kalles av to
+                forskjellige elementer og det er da mer praktisk at disse to kaller på funksjonen gjennom html koden.
             </p>
         </div>
         <div>
             <h4>Cross browser</h4>
-
+            <p>
+                Siden har blitt testet i tre forskjellige browsere (Chrome, Edge og Safari), der alt funket som det
+                skal. Dersom jeg skulle støte på browsere
+                der funksjonalitet ikke er støttet (feks. Audio elementet) har jeg lagt inn tekst som informerer om
+                dette. Jeg har også importert roboto fonten som
+                hovedfont til siden, så hvis en nettleser ikke skulle støtte dette, har jeg lagt inn helvetica som en
+                web safe fallback.
+            </p>
         </div>
         <div>
             <h4>Informasjonskilder</h4>
+            <p>
+                Svg bilder ble laget i <a href="https://svgator.com" target="_blank">SVGator</a>.<br>
+                Funksjonalitet for flex og grid leste jeg om på <a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a>.<br>
+                Dersom jeg støtte på noen problemer leste jeg meg enten opp på dokumentasjon på <a
+                    href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a>
+                eller guide på <a href="https://www.w3schools.com/" target="_blank">W3 Schools</a>, eller <a
+                    href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>.<br><br>
+                Ingen kodesnutter er kopiert, alt er selvskrevet original kode:)
 
+            </p>
         </div>
 
     </div>
-    <div id="docHeader" onclick="showDocumentation()">
+    <div id="docHeader">
         <h3>Klikk her for å vise dokumentasjon</h3>
     </div>
 </div>

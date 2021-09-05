@@ -48,7 +48,7 @@ function clear(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function showDocumentation() {
+$('#docHeader').click(function () {
     let doc = $('#documentation');
     let button = $('#docHeader')[0];
     if (doc.height() == 0) {
@@ -60,4 +60,4 @@ function showDocumentation() {
         button.innerHTML= "<h3>Klikk her for å vise dokumentasjon</h3>"
     }
 
-}
+});
