@@ -27,6 +27,8 @@ svg {
     margin-top: -20px;
     padding: 5px;
     box-shadow: 0 10px 5px grey;
+    display: inline-flex;
+    flex-direction: column;
 }
 
 #display {

@@ -469,21 +469,53 @@
     </div>
     <div id="separator"></div>
     <div id="documentation">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra ex sit amet lacus fringilla, in
-        pellentesque nulla hendrerit. Proin euismod in turpis sit amet tincidunt. Donec finibus ipsum nec neque
-        venenatis, sed egestas justo dictum. Pellentesque id cursus metus, eget cursus eros. Morbi ac facilisis diam. In
-        hac habitasse platea dictumst. Aliquam massa mauris, bibendum ut lacus sit amet, consectetur feugiat justo.
-        Nulla posuere nulla sit amet feugiat bibendum. Maecenas finibus fermentum posuere. In purus massa, ornare at
-        elementum eu, varius non leo.
+        <div>
+            <h4>Grid og Flexbox</h4>
+            <p>
+                Jeg har brukt Inline Flexbox element i "navigasjonsbaren", artikkelen om artisten og denne
+                dokumentasjonen.
+                Dette er for å forenkle stylingen av siden, da det er lett å holde elementer på plass (mot midten av
+                siden med justify-content)
+                samtidig som det gjør det lett å lage designet responsivt (feks bruke 'flex-wrap: wrap' i artikkelen for å
+                ha bildet over teksten for mindre skjermer). <br><br>
+                Under artikkelen har jeg brukt en grid for å vise frem noen tilfeldige bilder, dette egentlig bare for
+                å vise hvordan grid funker. Valget av grid her var på grunn av responsivt design og for å gjøre det enkelt
+                å ha bilder av forskjellige størrelser sammen.
+            </p>
+        </div>
+        <div>
+            <h4>SVG og Canvas</h4>
+            <p>
+                SVG-bildet består av 27 hardkodete SVG-elementer stablet oppå hverandre for å simulere dybde. Når man drar musen
+                over bildet blir museposisjen lagret i toppen av en liste på 27 koordinater, og hvert element får sin respektive posisjon
+                i rekkefølgen de ligger i for å få det til å se ut som ålen følger etter musa.<br><br>
+                Canvas bruker samme teknologi for posisjon av lagene (samme liste). Men bruker en loop over 21 bildefiler til å tegne bildene i
+                rekkefølge med drawImage. Funksjonen har også en counter som bruker clearRect på canvas ved gjevne intervaller (hvert
+                tiende funksjonskall) for at ålen ikke skal legge igjen bilder når den beveger seg videre<br><br>
+                Det at ålen forsvinner fra det ene bildet når den beveger seg over til det andre er et bevist valg for å få det til
+                å virke mer flytende (at det ikke er en frossen ål på bildet som ikke er i bruk), derav bruker SVG og Canvas-bildet samme
+                liste med musekoordinater.
+            </p>
+        </div>
+        <div>
+            <h4>jQuery</h4>
+            <p>
+                jQuery har jeg brukt til å koble opp html elementer til js koden. Feks når en SVG skal flyttes på, kalles IDen gjennom jQuery
+                og css blir endret derifra.
+            </p>
+        </div>
+        <div>
+            <h4>Cross browser</h4>
 
-        Proin augue enim, rutrum sit amet elit eget, bibendum gravida massa. Proin euismod tincidunt ullamcorper.
-        Curabitur mollis, urna ultrices mattis aliquet, dolor lacus semper felis, et scelerisque massa mauris vel neque.
-        Vivamus pretium sagittis nibh. Ut placerat interdum dolor ut commodo. Cras ut lobortis velit. Aenean neque
-        massa, tincidunt sed gravida sed, lobortis id tellus. Integer vestibulum enim vitae tortor faucibus, quis semper
-        lectus auctor.
+        </div>
+        <div>
+            <h4>Informasjonskilder</h4>
+
+        </div>
+
     </div>
     <div id="docHeader" onclick="showDocumentation()">
-        <h4>Klikk her for å vise dokumentasjon</h4>
+        <h3>Klikk her for å vise dokumentasjon</h3>
     </div>
 </div>
 
