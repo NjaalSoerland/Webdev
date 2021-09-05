@@ -53,11 +53,11 @@ function showDocumentation() {
     let button = $('#docHeader')[0];
     if (doc.height() == 0) {
         doc.css("height", "auto");
-        button.innerText = "Klikk her for å skjule dokumentasjon"
+        button.innerHTML = "<h4>Klikk her for å skjule dokumentasjon</h4>"
     }
     else {
         doc.css("height", "0");
-        button.innerText = "Klikk her for å vise dokumentasjon"
+        button.innerHTML= "<h4>Klikk her for å vise dokumentasjon</h4>"
     }
 
 }
